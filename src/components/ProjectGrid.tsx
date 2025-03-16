@@ -23,7 +23,7 @@ const ProjectGrid: React.FC = () => {
     config.projects.forEach(project => {
       project.tags.forEach(tag => tagsSet.add(tag));
     });
-    return Array.from(tagsSet);
+    return Array.from(tagsSet).sort();
   }, []);
   
   // Filter projects based on active tag
@@ -40,17 +40,6 @@ const ProjectGrid: React.FC = () => {
   
   const clearTagFilter = () => {
     setActiveTag(null);
-  };
-
-  // Create a "Coming Soon" project
-  const comingSoonProject = {
-    id: 999,
-    year: "Future",
-    title: "More Coming Soon...",
-    platforms: ["Various"],
-    tech: ["???"],
-    description: "Stay tuned for upcoming projects and experiments. Always working on something new!",
-    tags: ["Future"]
   };
 
   return (
