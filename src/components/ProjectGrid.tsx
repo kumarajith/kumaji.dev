@@ -43,12 +43,12 @@ const ProjectGrid: React.FC = () => {
   };
 
   return (
-    <section id="projects" className="py-20 px-4">
+    <section id="projects" className="py-12 px-4">
       <div className="container mx-auto">
-        <h2 className="section-title mb-12">Projects</h2>
+        <h2 className="section-title mb-6">Projects</h2>
         
         {/* Tag filter */}
-        <div className="mb-10">
+        <div className="mb-8">
           <div className="flex items-center gap-2 mb-3">
             <h3 className="text-white/90 font-gaming">Filter by:</h3>
             {activeTag && (
@@ -88,18 +88,17 @@ const ProjectGrid: React.FC = () => {
               delay={index}
             />
           ))}
-        </div>
-        
-        {/* Professional note for recruiters - redesigned */}
-        <div className="mt-16 mb-8 w-full max-w-4xl mx-auto">
-          <div className="gaming-card bg-gradient-to-br from-gaming-card/80 to-gaming-card/40 p-6 relative overflow-hidden border-l-4 border-neon-green">
-            <div className="absolute -top-12 -right-12 w-48 h-48 bg-neon-green/5 rounded-full blur-3xl"></div>
-            <h3 className="text-2xl font-gaming text-white mb-2 tracking-wide">Ready for New Opportunities</h3>
-            <p className="text-white/80 text-lg font-medium leading-relaxed">
-              Beyond these showcased projects, I've tackled numerous challenges and developed innovative solutions throughout my career.
-              <span className="text-neon-green font-semibold"> Currently exploring new technologies</span> and open to collaborating on exciting opportunities.
-            </p>
-            <p className="mt-2 text-white/60 text-base">Let's connect and discuss how my experience can benefit your team.</p>
+          
+          {/* Coming Soon Project Card */}
+          <div className="gaming-card group overflow-hidden animate-fade-in flex items-center justify-center min-h-[250px]">
+            <div className="p-6 text-center">
+              <h3 className="text-xl font-gaming font-bold text-white mb-3 group-hover:text-neon-green transition-colors">
+                More Coming Soon...
+              </h3>
+              <p className="text-white/60 text-sm">
+                Stay tuned for upcoming projects and developments
+              </p>
+            </div>
           </div>
         </div>
       </div>

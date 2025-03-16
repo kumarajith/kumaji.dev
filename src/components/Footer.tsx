@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
         
-        {/* Social links - redesigned to be compact */}
+        {/* Social links - compact icons only */}
         <div className="flex flex-wrap justify-center gap-3 mb-4">
           {config.social.map((item, index) => (
             <a
@@ -43,14 +43,11 @@ const Footer: React.FC = () => {
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gaming-card/50 hover:bg-gaming-accent/10 transition-all group"
+              className="flex items-center justify-center h-8 w-8 rounded-full bg-gaming-card/50 hover:bg-gaming-accent/10 transition-all group"
               aria-label={item.platform}
             >
               <span className="text-white/70 group-hover:text-neon-green transition-colors">
                 {iconMap[item.icon.toLowerCase()]}
-              </span>
-              <span className="font-gaming text-sm text-white/80 group-hover:text-white transition-colors">
-                {item.platform}
               </span>
             </a>
           ))}
