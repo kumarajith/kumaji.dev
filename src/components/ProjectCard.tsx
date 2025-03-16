@@ -51,15 +51,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, delay }) => {
           {project.title}
         </h3>
         
-        {/* Tags */}
-        <div className="flex flex-wrap gap-2 mb-4">
-          {project.tags.map((tag, index) => (
-            <span key={index} className="badge text-xs">
-              {tag}
-            </span>
-          ))}
-        </div>
-        
         {/* Technologies */}
         <div className="mb-4">
           <div className="flex flex-wrap gap-2">
@@ -87,9 +78,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, delay }) => {
           {expanded ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
         </button>
       </div>
-      
-      {/* Bottom glowing border accent that animates on hover */}
-      <div className="h-1 w-full bg-gradient-to-r from-transparent via-neon-green to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
     </div>
   );
 };
