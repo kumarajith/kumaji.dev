@@ -43,12 +43,12 @@ const ProjectGrid: React.FC = () => {
   };
 
   return (
-    <section id="projects" className="py-12 px-4">
+    <section id="projects" className="py-20 px-4">
       <div className="container mx-auto">
-        <h2 className="section-title mb-6">Projects</h2>
+        <h2 className="section-title mb-12">Projects</h2>
         
         {/* Tag filter */}
-        <div className="mb-8">
+        <div className="mb-10">
           <div className="flex items-center gap-2 mb-3">
             <h3 className="text-white/90 font-gaming">Filter by:</h3>
             {activeTag && (
@@ -88,18 +88,13 @@ const ProjectGrid: React.FC = () => {
               delay={index}
             />
           ))}
-          
-          {/* Coming Soon Project Card */}
-          <div className="gaming-card group overflow-hidden animate-fade-in flex items-center justify-center min-h-[250px]">
-            <div className="p-6 text-center">
-              <h3 className="text-xl font-gaming font-bold text-white mb-3 group-hover:text-neon-green transition-colors">
-                More Coming Soon...
-              </h3>
-              <p className="text-white/60 text-sm">
-                Stay tuned for upcoming projects and developments
-              </p>
-            </div>
-          </div>
+        </div>
+        
+        {/* Additional note */}
+        <div className="mt-12 text-center">
+          <p className="text-white/70 max-w-2xl mx-auto text-balance">
+            There are lots of other projects that were dumped mid development, as I had moved on to other things and there are lots of things I'm currently working on and planning to work on in the near future. Stay tuned for more
+          </p>
         </div>
       </div>
     </section>

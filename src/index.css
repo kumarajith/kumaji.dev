@@ -143,23 +143,4 @@
   .text-balance {
     text-wrap: balance;
   }
-  
-  /* Add matrix fall animation */
-  @keyframes matrix-fall {
-    0% {
-      opacity: 0;
-      transform: translateY(-100%);
-    }
-    50% {
-      opacity: 0.5;
-    }
-    100% {
-      opacity: 0;
-      transform: translateY(100%);
-    }
-  }
-  
-  .animate-matrix-fall {
-    animation: matrix-fall 8s linear infinite;
-  }
 }
