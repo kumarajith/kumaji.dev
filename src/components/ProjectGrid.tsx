@@ -2,7 +2,7 @@
 import React, { useState, useMemo } from 'react';
 import ProjectCard from './ProjectCard';
 import config from '../data/config.json';
-import { X } from 'lucide-react';
+import { X, Clock } from 'lucide-react';
 
 interface Project {
   id: number;
@@ -40,6 +40,17 @@ const ProjectGrid: React.FC = () => {
   
   const clearTagFilter = () => {
     setActiveTag(null);
+  };
+
+  // Create a "Coming Soon" project
+  const comingSoonProject = {
+    id: 999,
+    year: "Future",
+    title: "More Coming Soon...",
+    platforms: ["Various"],
+    tech: ["???"],
+    description: "Stay tuned for upcoming projects and experiments. Always working on something new!",
+    tags: ["Future"]
   };
 
   return (
@@ -88,13 +99,17 @@ const ProjectGrid: React.FC = () => {
               delay={index}
             />
           ))}
-        </div>
-        
-        {/* Additional note */}
-        <div className="mt-12 text-center">
-          <p className="text-white/70 max-w-2xl mx-auto text-balance">
-            There are lots of other projects that were dumped mid development, as I had moved on to other things and there are lots of things I'm currently working on and planning to work on in the near future. Stay tuned for more
-          </p>
+          
+          {/* Coming Soon Project Card */}
+          <div className="gaming-card group overflow-hidden animate-fade-in flex flex-col items-center justify-center p-8">
+            <Clock className="h-16 w-16 text-neon-green/40 mb-4 animate-pulse" />
+            <h3 className="text-xl font-gaming font-bold text-white mb-2 group-hover:text-neon-green transition-colors">
+              More Coming Soon...
+            </h3>
+            <p className="text-white/50 text-sm text-center">
+              Stay tuned for upcoming projects
+            </p>
+          </div>
         </div>
       </div>
     </section>
