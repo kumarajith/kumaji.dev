@@ -3,9 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import ProjectGrid from '../components/ProjectGrid';
-import SocialLinks from '../components/SocialLinks';
 import Footer from '../components/Footer';
-import SecretButton from '../components/SecretButton';
 
 const Index: React.FC = () => {
   const projectsRef = useRef<HTMLDivElement>(null);
@@ -41,21 +39,41 @@ const Index: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative">
-      {/* Background gradients */}
-      <div className="fixed top-0 left-0 w-full h-64 bg-gradient-to-b from-neon-green/5 to-transparent pointer-events-none"></div>
-      <div className="fixed bottom-0 right-0 w-1/3 h-64 bg-gradient-to-t from-neon-blue/5 to-transparent pointer-events-none"></div>
-      
-      {/* Gaming background elements */}
+    <div className="relative min-h-screen overflow-hidden">
+      {/* Immersive gamer-themed background */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute -right-20 top-1/3 w-40 h-40 opacity-10">
-          <div className="w-full h-full bg-neon-green rounded-full animate-pulse blur-xl"></div>
+        {/* Main dark gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-gaming-darker via-gaming-dark to-gaming-darker"></div>
+        
+        {/* Circuit pattern overlay */}
+        <div className="absolute inset-0 opacity-10 bg-circuit-pattern"></div>
+        
+        {/* Grid lines */}
+        <div className="absolute inset-0">
+          <div className="h-full w-full bg-[linear-gradient(90deg,rgba(57,255,20,0.03)_1px,transparent_1px),linear-gradient(0deg,rgba(57,255,20,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
         </div>
-        <div className="absolute left-10 bottom-1/4 w-16 h-16 opacity-10">
-          <div className="w-full h-full bg-neon-blue rounded-full animate-pulse delay-500 blur-xl"></div>
+        
+        {/* Ambient glow effects */}
+        <div className="absolute -left-32 -top-32 w-96 h-96 bg-neon-green/5 rounded-full filter blur-[100px]"></div>
+        <div className="absolute -right-32 top-1/3 w-96 h-96 bg-neon-blue/5 rounded-full filter blur-[100px]"></div>
+        <div className="absolute left-1/4 bottom-0 w-96 h-96 bg-neon-green/5 rounded-full filter blur-[100px]"></div>
+        
+        {/* Floating particles */}
+        <div className="absolute top-1/4 right-1/5 w-1 h-1 bg-neon-green rounded-full animate-pulse opacity-70"></div>
+        <div className="absolute top-1/2 left-1/4 w-1.5 h-1.5 bg-neon-green rounded-full animate-pulse opacity-60 animation-delay-700"></div>
+        <div className="absolute bottom-1/4 right-1/3 w-1 h-1 bg-neon-green rounded-full animate-pulse opacity-50 animation-delay-1500"></div>
+        <div className="absolute top-1/3 left-1/5 w-2 h-2 bg-neon-green/50 rounded-full animate-pulse opacity-40 animation-delay-300"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-1.5 h-1.5 bg-neon-blue/50 rounded-full animate-pulse opacity-30 animation-delay-1000"></div>
+        
+        {/* Code-like elements */}
+        <div className="absolute top-40 left-10 text-neon-green/10 font-mono text-xs opacity-30 transform -rotate-12">
+          &lt;div className="game-dev"&gt;
         </div>
-        <div className="absolute left-1/2 top-2/3 w-24 h-24 opacity-5">
-          <div className="w-full h-full bg-neon-pink rounded-full animate-pulse delay-1000 blur-xl"></div>
+        <div className="absolute bottom-60 right-20 text-neon-green/10 font-mono text-xs opacity-30 transform rotate-6">
+          console.log("Hello World");
+        </div>
+        <div className="absolute top-1/3 right-40 text-neon-green/10 font-mono text-xs opacity-30 transform rotate-90">
+          function render() { }
         </div>
       </div>
       

@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 import config from '../data/config.json';
 
 const iconMap: Record<string, React.ReactNode> = {
-  github: <Github className="h-5 w-5" />,
-  youtube: <Youtube className="h-5 w-5" />,
-  twitch: <Twitch className="h-5 w-5" />,
-  twitter: <Twitter className="h-5 w-5" />,
-  linkedin: <Linkedin className="h-5 w-5" />
+  github: <Github className="h-4 w-4" />,
+  youtube: <Youtube className="h-4 w-4" />,
+  twitch: <Twitch className="h-4 w-4" />,
+  twitter: <Twitter className="h-4 w-4" />,
+  linkedin: <Linkedin className="h-4 w-4" />
 };
 
 const Footer: React.FC = () => {
@@ -35,20 +35,21 @@ const Footer: React.FC = () => {
           </div>
         </div>
         
-        {/* Social links */}
-        <div className="flex flex-wrap justify-center gap-4 mb-4">
+        {/* Social links - redesigned to be compact */}
+        <div className="flex flex-wrap justify-center gap-3 mb-4">
           {config.social.map((item, index) => (
             <a
               key={index}
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="gaming-card flex items-center gap-2 px-4 py-2 hover:bg-gaming-accent/10 transition-all group"
+              className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gaming-card/50 hover:bg-gaming-accent/10 transition-all group"
+              aria-label={item.platform}
             >
               <span className="text-white/70 group-hover:text-neon-green transition-colors">
                 {iconMap[item.icon.toLowerCase()]}
               </span>
-              <span className="font-gaming text-white/90 group-hover:text-white transition-colors">
+              <span className="font-gaming text-sm text-white/80 group-hover:text-white transition-colors">
                 {item.platform}
               </span>
             </a>

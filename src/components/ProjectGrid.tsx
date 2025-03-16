@@ -90,16 +90,16 @@ const ProjectGrid: React.FC = () => {
           ))}
         </div>
         
-        {/* Future projects note - styled better */}
-        <div className="mt-16 mx-auto max-w-2xl">
-          <div className="gaming-card bg-gaming-card/70 border-neon-green/20 p-6 relative">
-            <div className="absolute -top-2 -left-2 w-4 h-4 bg-neon-green/50 rounded-full"></div>
-            <div className="absolute -bottom-2 -right-2 w-4 h-4 bg-neon-green/50 rounded-full"></div>
-            <p className="text-white/80 text-lg font-gaming text-balance">
-              There are lots of other projects that were dumped mid development, as I had moved on to other things. 
-              <span className="text-neon-green"> I'm currently working on exciting new ideas</span> and planning to work on more in the near future.
-              <span className="block mt-2 text-white/60 text-sm">Stay tuned for more!</span>
+        {/* Professional note for recruiters - redesigned */}
+        <div className="mt-16 mb-8 w-full max-w-4xl mx-auto">
+          <div className="gaming-card bg-gradient-to-br from-gaming-card/80 to-gaming-card/40 p-6 relative overflow-hidden border-l-4 border-neon-green">
+            <div className="absolute -top-12 -right-12 w-48 h-48 bg-neon-green/5 rounded-full blur-3xl"></div>
+            <h3 className="text-2xl font-gaming text-white mb-2 tracking-wide">Ready for New Opportunities</h3>
+            <p className="text-white/80 text-lg font-medium leading-relaxed">
+              Beyond these showcased projects, I've tackled numerous challenges and developed innovative solutions throughout my career.
+              <span className="text-neon-green font-semibold"> Currently exploring new technologies</span> and open to collaborating on exciting opportunities.
             </p>
+            <p className="mt-2 text-white/60 text-base">Let's connect and discuss how my experience can benefit your team.</p>
           </div>
         </div>
       </div>
