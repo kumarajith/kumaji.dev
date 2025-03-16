@@ -67,7 +67,9 @@ const Hero: React.FC = () => {
         
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-0 right-0 flex justify-center animate-bounce">
-          <ArrowDown className="h-6 w-6 text-neon-green" />
+          <a href="#projects" aria-label="Scroll to projects">
+            <ArrowDown className="h-6 w-6 text-neon-green" />
+          </a>
         </div>
       </div>
     </section>

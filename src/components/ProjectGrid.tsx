@@ -90,11 +90,17 @@ const ProjectGrid: React.FC = () => {
           ))}
         </div>
         
-        {/* Additional note */}
-        <div className="mt-12 text-center">
-          <p className="text-white/70 max-w-2xl mx-auto text-balance">
-            There are lots of other projects that were dumped mid development, as I had moved on to other things and there are lots of things I'm currently working on and planning to work on in the near future. Stay tuned for more
-          </p>
+        {/* Future projects note - styled better */}
+        <div className="mt-16 mx-auto max-w-2xl">
+          <div className="gaming-card bg-gaming-card/70 border-neon-green/20 p-6 relative">
+            <div className="absolute -top-2 -left-2 w-4 h-4 bg-neon-green/50 rounded-full"></div>
+            <div className="absolute -bottom-2 -right-2 w-4 h-4 bg-neon-green/50 rounded-full"></div>
+            <p className="text-white/80 text-lg font-gaming text-balance">
+              There are lots of other projects that were dumped mid development, as I had moved on to other things. 
+              <span className="text-neon-green"> I'm currently working on exciting new ideas</span> and planning to work on more in the near future.
+              <span className="block mt-2 text-white/60 text-sm">Stay tuned for more!</span>
+            </p>
+          </div>
         </div>
       </div>
     </section>
