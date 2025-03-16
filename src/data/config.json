@@ -1,0 +1,83 @@
+
+{
+  "personalInfo": {
+    "name": "John Doe",
+    "title": "Software Developer",
+    "description": "Software developer with 6 years of experience. Passionate about creating innovative solutions and enjoying games in my free time.",
+    "photo": "https://avatars.githubusercontent.com/u/11234?v=4"
+  },
+  "projects": [
+    {
+      "id": 1,
+      "year": "2017",
+      "title": "Tigers vs Goats",
+      "platforms": ["Android", "iOS"],
+      "tech": ["C#", "Unity"],
+      "description": "A digital version of a popular board game in India. Built as a college project out of my interest in game development. The app was very successful, garnering over 200,000 downloads on the Play Store and generating approximately $1,000 in ad revenue. Unfortunately, it was eventually removed by Google due to lack of maintenance, and the source code was lost during a Unity migration.",
+      "tags": ["Game Development", "Mobile", "Unity"]
+    },
+    {
+      "id": 2,
+      "year": "2018",
+      "title": "Project Swarm",
+      "platforms": ["Android", "iOS"],
+      "tech": ["C#", "Unity"],
+      "description": "A strategy puzzle game with multiple levels. This project wasn't as successful as Tigers vs Goats, partly due to the game concept not being as engaging. Like my previous game, this project was also lost over time.",
+      "tags": ["Game Development", "Mobile", "Unity", "Puzzle"]
+    },
+    {
+      "id": 3,
+      "year": "2020",
+      "title": "Vir - The Board Game",
+      "platforms": ["Web"],
+      "tech": ["React", "boardgameio", "feathersjs"],
+      "description": "This started as a project for a client who wanted a web version of their upcoming physical board game. It featured local and online multiplayer functionality. I developed, hosted, and maintained this for a while, but eventually took it down when the physical version didn't materialize.",
+      "tags": ["Web Development", "React", "Multiplayer", "Board Game"]
+    },
+    {
+      "id": 4,
+      "year": "2022",
+      "title": "Local Music Bot",
+      "platforms": ["Discord"],
+      "tech": ["JavaScript", "discordjs"],
+      "description": "A Discord bot built using discord.js to play music from a local device or server to a voice channel. Users can access the song list and options via commands. This was developed as a solution to music bots being banned from Discord, allowing my friends and me to enjoy music while gaming.",
+      "tags": ["Discord Bot", "JavaScript", "Music Player"]
+    },
+    {
+      "id": 5,
+      "year": "2024",
+      "title": "Bulk Clip Trimmer",
+      "platforms": ["Desktop"],
+      "tech": ["Flutter", "GPT-4o", "Copilot"],
+      "description": "A tool that allows users to go through hundreds of video clips in minutes with minimal clicks. As a gamer with instant replay enabled, I accumulated many 5-minute clips containing only 30 seconds of valuable content. Processing these clips individually was time-consuming, so I created this solution. I extensively used GPT-4o with Copilot to build this in Flutter (a technology I had no prior knowledge of), which provided an opportunity to learn the limitations and benefits of using LLMs for development.",
+      "tags": ["Desktop App", "Flutter", "AI-Assisted Development", "Video Processing"]
+    }
+  ],
+  "social": [
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/",
+      "icon": "github"
+    },
+    {
+      "platform": "YouTube",
+      "url": "https://youtube.com/",
+      "icon": "youtube"
+    },
+    {
+      "platform": "Twitch",
+      "url": "https://twitch.tv/",
+      "icon": "twitch"
+    },
+    {
+      "platform": "Twitter",
+      "url": "https://twitter.com/",
+      "icon": "twitter"
+    },
+    {
+      "platform": "LinkedIn",
+      "url": "https://linkedin.com/",
+      "icon": "linkedin"
+    }
+  ]
+}
