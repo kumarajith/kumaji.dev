@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { ArrowDown } from 'lucide-react';
 import config from '../data/config.json';
 
 const Hero: React.FC = () => {
@@ -30,7 +29,6 @@ const Hero: React.FC = () => {
                 className="btn-primary px-6 py-3 rounded-md inline-flex items-center gap-2"
               >
                 View Projects
-                <ArrowDown className="h-4 w-4 animate-pulse" />
               </a>
             </div>
           </div>
@@ -63,11 +61,6 @@ const Hero: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
-        
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-0 right-0 flex justify-center animate-bounce">
-          <ArrowDown className="h-6 w-6 text-neon-green" />
         </div>
       </div>
     </section>

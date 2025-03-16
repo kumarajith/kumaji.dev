@@ -32,26 +32,27 @@ const Index: React.FC = () => {
 
   return (
     <div className="relative">
-      {/* Enhanced background with gaming theme */}
+      {/* Enhanced background with tech/space theme */}
       <div className="fixed inset-0 pointer-events-none">
         {/* Main gradient background */}
-        <div className="absolute inset-0 bg-gaming-darker bg-circuit-pattern bg-fixed opacity-25"></div>
+        <div className="absolute inset-0 bg-gaming-darker bg-fixed opacity-25"></div>
         
         {/* Top glow */}
-        <div className="absolute top-0 left-0 right-0 h-64 bg-gradient-to-b from-neon-green/10 to-transparent"></div>
+        <div className="absolute top-0 left-0 right-0 h-64 bg-gradient-to-b from-neon-blue/20 to-transparent"></div>
         
         {/* Bottom glow */}
-        <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-neon-blue/10 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-neon-blue/20 to-transparent"></div>
         
-        {/* Dot grid overlay */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-30"></div>
+        {/* Star field overlay */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwMCIgaGVpZ2h0PSIxMDAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxyYWRpYWxHcmFkaWVudCBpZD0iYSIgcj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmZiIgc3RvcC1vcGFjaXR5PSIwIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBmaWxsPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMiIgZD0iTTEwMCA1MGExIDEgMCAxIDEgMC0yIDEgMSAwIDAgMSAwIDJabTQwIDE1MGExIDEgMCAxIDEgMC0yIDEgMSAwIDAgMSAwIDJabTM1MCA4MGExIDEgMCAxIDEgMC0yIDEgMSAwIDAgMSAwIDJabTQwMC01MGExIDEgMCAxIDEgMC0yIDEgMSAwIDAgMSAwIDJabS0xNTAgMzUwYTEgMSAwIDEgMSAwLTIgMSAxIDAgMCAxIDAgMlptLTMwMC0xNTBhMSAxIDAgMSAxIDAtMiAxIDEgMCAwIDEgMCAyWm04MDAgMTgwYTEgMSAwIDEgMSAwLTIgMSAxIDAgMCAxIDAgMlptLTYwLTMwYTEgMSAwIDEgMSAwLTIgMSAxIDAgMCAxIDAgMlptLTcwLTEwYTEgMSAwIDEgMSAwLTIgMSAxIDAgMCAxIDAgMlptLTY1MCAxMGExIDEgMCAxIDEgMC0yIDEgMSAwIDAgMSAwIDJabS01MC0xMGExIDEgMCAxIDEgMC0yIDEgMSAwIDAgMSAwIDJabTQ1MCAyMGExIDEgMCAxIDEgMC0yIDEgMSAwIDAgMSAwIDJabTUwIDEwYTEgMSAwIDEgMSAwLTIgMSAxIDAgMCAxIDAgMlptLTQwMC0zMGExIDEgMCAxIDEgMC0yIDEgMSAwIDAgMSAwIDJabTg1MCAtMjBhMSAxIDAgMSAxIDAtMiAxIDEgMCAwIDEgMCAyWm0tNTAtNGExIDEgMCAxIDEgMC0yIDEgMSAwIDAgMSAwIDJaIi8+PC9nPjwvc3ZnPg==')] opacity-70"></div>
         
-        {/* Random glowing "pixels" */}
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 rounded-full bg-neon-green blur-sm animate-pulse"></div>
-        <div className="absolute top-3/4 right-1/4 w-3 h-3 rounded-full bg-neon-blue blur-sm animate-pulse"></div>
-        <div className="absolute top-1/2 left-3/4 w-2 h-2 rounded-full bg-neon-pink blur-sm animate-pulse"></div>
-        <div className="absolute top-1/3 right-1/3 w-1 h-1 rounded-full bg-neon-green blur-sm animate-pulse"></div>
-        <div className="absolute bottom-1/4 left-1/2 w-2 h-2 rounded-full bg-neon-green blur-sm animate-pulse"></div>
+        {/* Digital grid lines */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(57,255,20,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(57,255,20,0.05)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+        
+        {/* Subtle tech elements */}
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full border border-neon-blue/10 opacity-30"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full border border-neon-green/10 opacity-20"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-neon-blue/5 opacity-10"></div>
       </div>
       
       <Navbar />
