@@ -1,4 +1,3 @@
-
 import React from 'react';
 import config from '../data/config.json';
 
@@ -6,7 +5,7 @@ const Hero: React.FC = () => {
   const { name, title, description, photo } = config.personalInfo;
 
   return (
-    <section className="min-h-screen flex items-center justify-center pt-24 pb-16 px-4">
+    <section className="min-h-screen flex items-center justify-center pt-24 pb-8 px-4">
       <div className="container relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
           <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left animate-fade-in">
