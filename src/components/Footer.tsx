@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
           <div className="flex items-center space-x-6">
             {/* Resume Download */}
             <a
-              href="/resume.pdf"
+              href="/ajith_kumar.pdf"
               download
               className="text-white/60 hover:text-neon-green transition-colors flex items-center gap-1 text-sm"
               title="Download Resume"

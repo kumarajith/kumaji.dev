@@ -44,7 +44,7 @@ const Navbar: React.FC = () => {
               Contact
             </a>
             <a 
-              href="/resume.pdf" 
+              href="/ajith_kumar.pdf" 
               download
               className="font-gaming text-white/80 hover:text-neon-green link-hover flex items-center gap-1"
               title="Download Resume"
@@ -86,7 +86,7 @@ const Navbar: React.FC = () => {
             Contact
           </a>
           <a 
-            href="/resume.pdf" 
+            href="/ajith_kumar.pdf" 
             download
             className="font-gaming text-2xl text-white hover:text-neon-green flex items-center gap-2"
             onClick={() => setIsMenuOpen(false)}
