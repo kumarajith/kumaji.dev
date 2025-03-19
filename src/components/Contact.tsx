@@ -19,7 +19,7 @@ const Contact: React.FC = () => {
           <a
             href="/resume.pdf"
             download
-            className="inline-flex items-center gap-2 text-white/80 hover:text-neon-green transition-colors mt-4"
+            className="inline-flex items-center gap-2 text-white/60 hover:text-neon-green transition-colors mt-4"
             title="Download Resume"
           >
             <FileDown className="h-5 w-5" />
