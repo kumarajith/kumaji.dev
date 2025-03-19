@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, FileDown } from 'lucide-react';
 import config from '../data/config.json';
 
 const Navbar: React.FC = () => {
@@ -43,6 +43,15 @@ const Navbar: React.FC = () => {
             <a href="#contact" className="font-gaming text-white/80 hover:text-neon-green link-hover">
               Contact
             </a>
+            <a 
+              href="/resume.pdf" 
+              download
+              className="font-gaming text-white/80 hover:text-neon-green link-hover flex items-center gap-1"
+              title="Download Resume"
+            >
+              <FileDown className="h-4 w-4" />
+              <span>Resume</span>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -75,6 +84,16 @@ const Navbar: React.FC = () => {
             onClick={() => setIsMenuOpen(false)}
           >
             Contact
+          </a>
+          <a 
+            href="/resume.pdf" 
+            download
+            className="font-gaming text-2xl text-white hover:text-neon-green flex items-center gap-2"
+            onClick={() => setIsMenuOpen(false)}
+            title="Download Resume"
+          >
+            <FileDown className="h-5 w-5" />
+            <span>Resume</span>
           </a>
         </div>
       </div>

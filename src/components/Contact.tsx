@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, FileDown } from 'lucide-react';
+import { Mail } from 'lucide-react';
 
 const Contact: React.FC = () => {
   return (
@@ -15,16 +15,6 @@ const Contact: React.FC = () => {
             <Mail className="h-5 w-5 text-neon-green" />
             Reach out to me at <a href="mailto:kumarajith1996@gmail.com" className="text-neon-green hover:underline">kumarajith1996@gmail.com</a>
           </p>
-          
-          <a
-            href="/resume.pdf"
-            download
-            className="inline-flex items-center gap-2 text-white/60 hover:text-neon-green transition-colors mt-4"
-            title="Download Resume"
-          >
-            <FileDown className="h-5 w-5" />
-            <span>Download my resume</span>
-          </a>
         </div>
       </div>
     </section>
