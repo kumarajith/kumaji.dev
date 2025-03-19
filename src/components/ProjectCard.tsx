@@ -8,7 +8,6 @@ interface Project {
   year: string;
   title: string;
   platforms: string[];
-  tech: string[];
   description: string;
   tags: string[];
 }
