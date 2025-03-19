@@ -1,7 +1,7 @@
 
 import React from 'react';
 import config from '../data/config.json';
-import { Github, Youtube, Twitch, Twitter, Linkedin } from 'lucide-react';
+import { Github, Youtube, Twitch, Twitter, Linkedin, FileDown } from 'lucide-react';
 
 const iconMap: Record<string, React.ReactNode> = {
   github: <Github className="h-5 w-5" />,
@@ -25,6 +25,17 @@ const Footer: React.FC = () => {
           </div>
           
           <div className="flex items-center space-x-6">
+            {/* Resume Download Link */}
+            <a
+              href="/resume.pdf"
+              download
+              className="text-white/70 hover:text-neon-green transition-colors flex items-center gap-1"
+              title="Download Resume"
+            >
+              <FileDown className="h-5 w-5" />
+              <span className="text-sm">Resume</span>
+            </a>
+            
             {/* Social Links */}
             <div className="flex gap-4">
               {config.social.map((item, index) => (
