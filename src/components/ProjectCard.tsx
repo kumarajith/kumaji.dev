@@ -64,9 +64,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, delay }) => {
           {/* Technologies */}
           <div className="mb-4">
             <div className="flex flex-wrap gap-2">
-              {project.tech.map((tech, index) => (
+              {project.tags.map((tag, index) => (
                 <span key={index} className="text-white/70 bg-white/5 px-2 py-1 rounded text-xs">
-                  {tech}
+                  {tag}
                 </span>
               ))}
             </div>
@@ -111,18 +111,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, delay }) => {
             <div className="flex items-center space-x-2">
               <h4 className="text-white font-medium">Platforms:</h4>
               <span className="text-white/70">{project.platforms.join(', ')}</span>
-            </div>
-            
-            {/* Technologies */}
-            <div>
-              <h4 className="text-white font-medium mb-2">Technologies:</h4>
-              <div className="flex flex-wrap gap-2">
-                {project.tech.map((tech, index) => (
-                  <span key={index} className="text-white/70 bg-white/10 px-3 py-1 rounded text-sm">
-                    {tech}
-                  </span>
-                ))}
-              </div>
             </div>
             
             {/* Full Description */}

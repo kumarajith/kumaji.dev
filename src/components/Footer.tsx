@@ -40,13 +40,6 @@ const Footer: React.FC = () => {
                 </a>
               ))}
             </div>
-            
-            <a 
-              href="#" 
-              className="text-white/60 hover:text-neon-green text-sm transition-colors"
-            >
-              Back to top
-            </a>
           </div>
         </div>
       </div>

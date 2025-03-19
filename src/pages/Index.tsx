@@ -63,7 +63,6 @@ const Index: React.FC = () => {
         <Contact />
       </main>
       <Footer />
-      <SecretButton />
     </div>
   );
 };
