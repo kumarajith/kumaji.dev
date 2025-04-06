@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, FileDown } from 'lucide-react';
+import { Menu, X, FileDown, Film } from 'lucide-react';
 import config from '../data/config.json';
 
 const Navbar: React.FC = () => {
@@ -43,6 +43,10 @@ const Navbar: React.FC = () => {
             <a href="#contact" className="font-gaming text-white/80 hover:text-neon-green link-hover">
               Contact
             </a>
+            <Link to="/bulk-clip-trimmer" className="font-gaming text-white/80 hover:text-neon-green link-hover flex items-center gap-1">
+              <Film className="h-4 w-4" />
+              <span>Bulk Clip Trimmer</span>
+            </Link>
             <a 
               href="/ajith_kumar.pdf" 
               download
@@ -85,6 +89,14 @@ const Navbar: React.FC = () => {
           >
             Contact
           </a>
+          <Link 
+            to="/bulk-clip-trimmer" 
+            className="font-gaming text-2xl text-white hover:text-neon-green flex items-center gap-2"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <Film className="h-5 w-5" />
+            <span>Bulk Clip Trimmer</span>
+          </Link>
           <a 
             href="/ajith_kumar.pdf" 
             download
