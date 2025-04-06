@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Calendar, ChevronDown, ChevronUp, MonitorSmartphone, ExternalLink } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from './ui/dialog';
+import { useNavigate } from 'react-router-dom';
 
 interface Project {
   id: number;
@@ -20,6 +21,7 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, delay }) => {
   const [expanded, setExpanded] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleExpand = () => {
     setExpanded(!expanded);
@@ -35,12 +37,22 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, delay }) => {
     return firstSentence;
   };
 
+  // Handle click on project card
+  const handleProjectClick = () => {
+    // Check if this is the Bulk Clip Trimmer project
+    if (project.title === "Bulk Clip Trimmer") {
+      navigate('/bulk-clip-trimmer');
+    } else {
+      setModalOpen(true);
+    }
+  };
+
   return (
     <>
       <div 
         className="gaming-card group overflow-hidden animate-fade-in cursor-pointer"
         style={{ animationDelay: `${delay * 100}ms` }}
-        onClick={() => setModalOpen(true)}
+        onClick={handleProjectClick}
       >
         <div className="p-6 transition-all duration-300">
           {/* Card Header */}
@@ -78,50 +90,52 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, delay }) => {
           
           {/* View Details Hint */}
           <div className="text-neon-green/70 text-sm flex items-center gap-1 mt-auto">
-            <span>View Details</span>
+            <span>{project.title === "Bulk Clip Trimmer" ? "View App Page" : "View Details"}</span>
             <ExternalLink className="h-3 w-3" />
           </div>
         </div>
       </div>
 
-      {/* Project Details Modal */}
-      <Dialog open={modalOpen} onOpenChange={setModalOpen}>
-        <DialogContent className="bg-gaming-dark border-gaming-accent max-w-3xl max-h-[90vh] overflow-y-auto">
-          <DialogHeader>
-            <div className="flex justify-between items-center">
-              <DialogTitle className="text-2xl font-gaming text-white">
-                {project.title}
-              </DialogTitle>
-              <span className="text-neon-green/80 font-mono text-sm">{project.year}</span>
-            </div>
-          </DialogHeader>
-          
-          <div className="mt-4 space-y-6">
-            {/* Tags */}
-            <div className="flex flex-wrap gap-2">
-              {project.tags.map((tag, index) => (
-                <span key={index} className="badge text-xs">
-                  {tag}
-                </span>
-              ))}
-            </div>
+      {/* Project Details Modal - Only shown for non-Bulk Clip Trimmer projects */}
+      {project.title !== "Bulk Clip Trimmer" && (
+        <Dialog open={modalOpen} onOpenChange={setModalOpen}>
+          <DialogContent className="bg-gaming-dark border-gaming-accent max-w-3xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <div className="flex justify-between items-center">
+                <DialogTitle className="text-2xl font-gaming text-white">
+                  {project.title}
+                </DialogTitle>
+                <span className="text-neon-green/80 font-mono text-sm">{project.year}</span>
+              </div>
+            </DialogHeader>
             
-            {/* Platforms */}
-            <div className="flex items-center space-x-2">
-              <h4 className="text-white font-medium">Platforms:</h4>
-              <span className="text-white/70">{project.platforms.join(', ')}</span>
+            <div className="mt-4 space-y-6">
+              {/* Tags */}
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map((tag, index) => (
+                  <span key={index} className="badge text-xs">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              
+              {/* Platforms */}
+              <div className="flex items-center space-x-2">
+                <h4 className="text-white font-medium">Platforms:</h4>
+                <span className="text-white/70">{project.platforms.join(', ')}</span>
+              </div>
+              
+              {/* Full Description */}
+              <div>
+                <h4 className="text-white font-medium mb-2">About this Project:</h4>
+                <p className="text-white/70 whitespace-pre-line text-sm leading-relaxed">
+                  {project.description}
+                </p>
+              </div>
             </div>
-            
-            {/* Full Description */}
-            <div>
-              <h4 className="text-white font-medium mb-2">About this Project:</h4>
-              <p className="text-white/70 whitespace-pre-line text-sm leading-relaxed">
-                {project.description}
-              </p>
-            </div>
-          </div>
-        </DialogContent>
-      </Dialog>
+          </DialogContent>
+        </Dialog>
+      )}
     </>
   );
 };
