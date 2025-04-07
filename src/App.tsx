@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import Hobbies from "./pages/Hobbies";
 import BulkClipTrimmer from "./pages/BulkClipTrimmer";
 import NotFound from "./pages/NotFound";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/hobbies" element={<Hobbies />} />
           <Route path="/bulk-clip-trimmer" element={<BulkClipTrimmer />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
