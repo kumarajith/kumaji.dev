@@ -1,24 +1,26 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Download, Clock, Film, Music, FastForward, Settings, Layers, CheckCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { ArrowLeft, Clock, Film, Music, FastForward, Settings, Layers, CheckCircle } from 'lucide-react';
 import Footer from '../components/Footer';
 import { useToast } from '@/hooks/use-toast';
 
 const BulkClipTrimmer: React.FC = () => {
   const { toast } = useToast();
   
-  const handleDownload = () => {
-    toast({
-      title: "Download started",
-      description: "Your download should begin automatically",
-    });
-  };
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'module';
+    script.src = 'https://get.microsoft.com/badge/ms-store-badge.bundled.js';
+    script.async = true;
+    document.body.appendChild(script);
+    
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <div className="bg-gradient-to-b from-gray-900 to-black min-h-screen text-white">
-      {/* Navigation */}
       <header className="p-4 border-b border-gray-800">
         <div className="container mx-auto flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2 text-white hover:text-neon-blue transition-colors">
@@ -28,7 +30,6 @@ const BulkClipTrimmer: React.FC = () => {
         </div>
       </header>
 
-      {/* Hero Section */}
       <section className="py-16 md:py-24 px-4">
         <div className="container mx-auto max-w-5xl">
           <div className="flex flex-col items-center text-center mb-12">
@@ -40,21 +41,23 @@ const BulkClipTrimmer: React.FC = () => {
             </p>
             
             <div className="mt-10">
-              <a 
-                href="https://github.com/kumarajith/bulk-clip-trimmer/releases/download/release/Bulk.Clip.Trimmer.exe"
-                onClick={handleDownload}
-                className="inline-flex items-center gap-2 bg-neon-green text-black font-bold py-4 px-8 rounded-lg hover:bg-neon-green/90 transition-all transform hover:scale-105 shadow-neon-sm"
-              >
-                <Download size={20} />
-                Download for Windows
-              </a>
-              <p className="text-gray-400 mt-3 text-sm">Version 1.0.0 | Windows Only</p>
+              <div className="inline-block">
+                <ms-store-badge
+                  productid="9npxbvrgrdh3"
+                  productname="BatchSnip - Bulk Clip Trimmer"
+                  window-mode="direct"
+                  theme="dark"
+                  size="large"
+                  language="en-in"
+                  animation="on">
+                </ms-store-badge>
+              </div>
+              <p className="text-gray-400 mt-3 text-sm">Now available on the Microsoft Store</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Main Features */}
       <section className="py-16 bg-black/50">
         <div className="container mx-auto max-w-6xl px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Why Use Bulk Clip Trimmer?</h2>
@@ -93,7 +96,6 @@ const BulkClipTrimmer: React.FC = () => {
         </div>
       </section>
 
-      {/* How It Works Section */}
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-5xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">How It Works</h2>
@@ -186,7 +188,6 @@ const BulkClipTrimmer: React.FC = () => {
         </div>
       </section>
 
-      {/* Key Benefits */}
       <section className="py-16 px-4 bg-gray-900/50">
         <div className="container mx-auto max-w-5xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Key Benefits</h2>
@@ -243,7 +244,6 @@ const BulkClipTrimmer: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA Download */}
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <div className="bg-gradient-to-r from-gray-800/50 to-gray-900/50 p-8 md:p-12 rounded-2xl border border-gray-700">
@@ -251,20 +251,22 @@ const BulkClipTrimmer: React.FC = () => {
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               Download Bulk Clip Trimmer now and experience the fastest way to process your video content.
             </p>
-            <a 
-              href="https://github.com/kumarajith/bulk-clip-trimmer/releases/download/release/Bulk.Clip.Trimmer.exe"
-              onClick={handleDownload}
-              className="inline-flex items-center gap-2 bg-neon-green text-black font-bold py-4 px-8 rounded-lg hover:bg-neon-green/90 transition-all transform hover:scale-105 shadow-neon-sm"
-            >
-              <Download size={20} />
-              Download for Windows
-            </a>
-            <p className="text-gray-400 mt-4">Currently available for Windows only. Mac version coming soon.</p>
+            <div className="flex justify-center">
+              <ms-store-badge
+                productid="9npxbvrgrdh3"
+                productname="BatchSnip - Bulk Clip Trimmer"
+                window-mode="direct"
+                theme="dark"
+                size="large"
+                language="en-in"
+                animation="on">
+              </ms-store-badge>
+            </div>
+            <p className="text-gray-400 mt-4">Available on Windows 10/11 devices via the Microsoft Store</p>
           </div>
         </div>
       </section>
 
-      {/* System Requirements */}
       <section className="py-12 px-4 bg-black/50">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-2xl font-bold mb-6 text-center">System Requirements</h2>
