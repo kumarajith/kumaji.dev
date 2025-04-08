@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Clock, Film, Music, FastForward, Settings, Layers, CheckCircle } from 'lucide-react';
 import Footer from '../components/Footer';
@@ -6,52 +6,10 @@ import { useToast } from '@/hooks/use-toast';
 
 const BulkClipTrimmer: React.FC = () => {
   const { toast } = useToast();
-  const storeBadgeRef1 = useRef<HTMLDivElement>(null);
-  const storeBadgeRef2 = useRef<HTMLDivElement>(null);
   
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.type = 'module';
-    script.src = 'https://get.microsoft.com/badge/ms-store-badge.bundled.js';
-    script.async = true;
-    document.body.appendChild(script);
-    
-    const renderBadges = () => {
-      if (storeBadgeRef1.current) {
-        storeBadgeRef1.current.innerHTML = `
-          <ms-store-badge
-            productid="9npxbvrgrdh3"
-            productname="BatchSnip - Bulk Clip Trimmer"
-            window-mode="direct"
-            theme="dark"
-            size="large"
-            language="en-in"
-            animation="on">
-          </ms-store-badge>
-        `;
-      }
-      
-      if (storeBadgeRef2.current) {
-        storeBadgeRef2.current.innerHTML = `
-          <ms-store-badge
-            productid="9npxbvrgrdh3"
-            productname="BatchSnip - Bulk Clip Trimmer"
-            window-mode="direct"
-            theme="dark"
-            size="large"
-            language="en-in"
-            animation="on">
-          </ms-store-badge>
-        `;
-      }
-    };
-    
-    script.onload = renderBadges;
-    
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
+  // Microsoft Store direct links
+  const msStoreBrowserUrl = 'https://apps.microsoft.com/detail/9npxbvrgrdh3'; // For non-Windows devices
+  const msStoreAppUrl = 'ms-windows-store://pdp/?productid=9npxbvrgrdh3'; // Direct to MS Store app
 
   return (
     <div className="bg-gradient-to-b from-gray-900 to-black min-h-screen text-white">
@@ -75,7 +33,21 @@ const BulkClipTrimmer: React.FC = () => {
             </p>
             
             <div className="mt-10">
-              <div className="inline-block" ref={storeBadgeRef1}></div>
+              <div className="inline-block">
+                <a href={msStoreAppUrl} onClick={(e) => {
+                  // Fallback for non-Windows devices
+                  if (!navigator.userAgent.includes('Windows')) {
+                    e.preventDefault();
+                    window.open(msStoreBrowserUrl, '_blank');
+                  }
+                }}>
+                  <img 
+                    src="https://get.microsoft.com/images/en-us%20dark.svg" 
+                    alt="Get BatchSnip - Bulk Clip Trimmer from Microsoft Store" 
+                    className="w-auto h-20"
+                  />
+                </a>
+              </div>
               <p className="text-gray-400 mt-3 text-sm">Now available on the Microsoft Store</p>
             </div>
           </div>
@@ -276,7 +248,21 @@ const BulkClipTrimmer: React.FC = () => {
               Download Bulk Clip Trimmer now and experience the fastest way to process your video content.
             </p>
             <div className="flex justify-center">
-              <div ref={storeBadgeRef2}></div>
+              <div className="inline-block">
+                <a href={msStoreAppUrl} onClick={(e) => {
+                  // Fallback for non-Windows devices
+                  if (!navigator.userAgent.includes('Windows')) {
+                    e.preventDefault();
+                    window.open(msStoreBrowserUrl, '_blank');
+                  }
+                }}>
+                  <img 
+                    src="https://get.microsoft.com/images/en-us%20dark.svg" 
+                    alt="Get BatchSnip - Bulk Clip Trimmer from Microsoft Store" 
+                    className="w-auto h-20"
+                  />
+                </a>
+              </div>
             </div>
             <p className="text-gray-400 mt-4">Available on Windows 10/11 devices via the Microsoft Store</p>
           </div>
