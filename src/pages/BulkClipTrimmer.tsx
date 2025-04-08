@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Clock, Film, Music, FastForward, Settings, Layers, CheckCircle } from 'lucide-react';
 import Footer from '../components/Footer';
@@ -6,6 +6,8 @@ import { useToast } from '@/hooks/use-toast';
 
 const BulkClipTrimmer: React.FC = () => {
   const { toast } = useToast();
+  const storeBadgeRef1 = useRef<HTMLDivElement>(null);
+  const storeBadgeRef2 = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
     const script = document.createElement('script');
@@ -13,6 +15,38 @@ const BulkClipTrimmer: React.FC = () => {
     script.src = 'https://get.microsoft.com/badge/ms-store-badge.bundled.js';
     script.async = true;
     document.body.appendChild(script);
+    
+    const renderBadges = () => {
+      if (storeBadgeRef1.current) {
+        storeBadgeRef1.current.innerHTML = `
+          <ms-store-badge
+            productid="9npxbvrgrdh3"
+            productname="BatchSnip - Bulk Clip Trimmer"
+            window-mode="direct"
+            theme="dark"
+            size="large"
+            language="en-in"
+            animation="on">
+          </ms-store-badge>
+        `;
+      }
+      
+      if (storeBadgeRef2.current) {
+        storeBadgeRef2.current.innerHTML = `
+          <ms-store-badge
+            productid="9npxbvrgrdh3"
+            productname="BatchSnip - Bulk Clip Trimmer"
+            window-mode="direct"
+            theme="dark"
+            size="large"
+            language="en-in"
+            animation="on">
+          </ms-store-badge>
+        `;
+      }
+    };
+    
+    script.onload = renderBadges;
     
     return () => {
       document.body.removeChild(script);
@@ -41,17 +75,7 @@ const BulkClipTrimmer: React.FC = () => {
             </p>
             
             <div className="mt-10">
-              <div className="inline-block">
-                <ms-store-badge
-                  productid="9npxbvrgrdh3"
-                  productname="BatchSnip - Bulk Clip Trimmer"
-                  window-mode="direct"
-                  theme="dark"
-                  size="large"
-                  language="en-in"
-                  animation="on">
-                </ms-store-badge>
-              </div>
+              <div className="inline-block" ref={storeBadgeRef1}></div>
               <p className="text-gray-400 mt-3 text-sm">Now available on the Microsoft Store</p>
             </div>
           </div>
@@ -252,15 +276,7 @@ const BulkClipTrimmer: React.FC = () => {
               Download Bulk Clip Trimmer now and experience the fastest way to process your video content.
             </p>
             <div className="flex justify-center">
-              <ms-store-badge
-                productid="9npxbvrgrdh3"
-                productname="BatchSnip - Bulk Clip Trimmer"
-                window-mode="direct"
-                theme="dark"
-                size="large"
-                language="en-in"
-                animation="on">
-              </ms-store-badge>
+              <div ref={storeBadgeRef2}></div>
             </div>
             <p className="text-gray-400 mt-4">Available on Windows 10/11 devices via the Microsoft Store</p>
           </div>
