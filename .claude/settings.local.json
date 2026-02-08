@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(set VITE_SITE_VERSION=minimal)",
+      "Bash(npx vite build)",
+      "Bash(npx cross-env:*)",
+      "Bash(VITE_SITE_VERSION=minimal npx vite build:*)",
+      "Bash(VITE_SITE_VERSION=original npx vite build:*)"
+    ]
+  }
+}

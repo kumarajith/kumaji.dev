@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #0a0f0a;
+}
+
+.minimal-page {
+  min-height: 100vh;
+  background-color: #0a0f0a;
+  color: #c8d6c8;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.minimal-container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+/* Header */
+.minimal-header {
+  margin-bottom: 3rem;
+}
+
+.minimal-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #e8f5e8;
+  margin: 0 0 0.25rem 0;
+  letter-spacing: -0.02em;
+}
+
+.minimal-title {
+  color: #5a9a5a;
+  margin: 0 0 1rem 0;
+  font-size: 0.95rem;
+}
+
+.minimal-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.minimal-social a {
+  color: #6abf6a;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s;
+  border-bottom: 1px solid transparent;
+}
+
+.minimal-social a:hover {
+  color: #90e890;
+  border-bottom-color: #4a8f4a;
+}
+
+/* Sections */
+.minimal-section {
+  margin-bottom: 2.5rem;
+}
+
+.minimal-section h2 {
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #4a8f4a;
+  margin: 0 0 1rem 0;
+}
+
+.minimal-section > p {
+  color: #a0b8a0;
+  margin: 0;
+}
+
+/* Projects */
+.minimal-projects {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.minimal-projects li {
+  padding: 1rem 0;
+  border-top: 1px solid #1a2e1a;
+}
+
+.minimal-projects li:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.minimal-project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.35rem;
+}
+
+.minimal-project-title {
+  color: #e0f0e0;
+  font-weight: 500;
+}
+
+.minimal-project-year {
+  color: #3d7a3d;
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.minimal-project-desc {
+  color: #8aaa8a;
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.minimal-project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.minimal-tag {
+  font-size: 0.75rem;
+  color: #5a9a5a;
+  background: #0f1a0f;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  border: 1px solid #1a3a1a;
+}
+
+/* Footer */
+.minimal-footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #1a2e1a;
+}
+
+.minimal-footer p {
+  color: #3d6b3d;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .minimal-container {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .minimal-name {
+    font-size: 1.3rem;
+  }
+}

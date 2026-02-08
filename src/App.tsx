@@ -9,10 +9,12 @@ import Hobbies from "./pages/Hobbies";
 import BulkClipTrimmer from "./pages/BulkClipTrimmer";
 import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import MinimalIndex from "./pages/MinimalIndex";
 
+const siteVersion = import.meta.env.VITE_SITE_VERSION || 'original';
 const queryClient = new QueryClient();
 
-const App = () => (
+const OriginalApp = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
@@ -29,5 +31,12 @@ const App = () => (
     </TooltipProvider>
   </QueryClientProvider>
 );
+
+const App = () => {
+  if (siteVersion === 'minimal') {
+    return <MinimalIndex />;
+  }
+  return <OriginalApp />;
+};
 
 export default App;
