@@ -10,40 +10,51 @@
       "id": 1,
       "year": "2017",
       "title": "Tigers vs Goats",
+      "type": "Game",
       "platforms": ["Android", "iOS"],
       "description": "A digital adaptation of a popular Indian board game, built as a college project. The app gained over 200,000 downloads on the Play Store and generated around $1,000 in ad revenue before being removed due to lack of maintenance.",
+      "tools": ["Unity", "C#"],
       "tags": ["Mobile Development", "Unity"]
     },
     {
       "id": 2,
       "year": "2018",
       "title": "Project Swarm",
+      "type": "Game",
       "platforms": ["Android", "iOS"],
       "description": "A strategy puzzle game with multiple levels. While not as successful as Tigers vs Goats, it was an interesting technical challenge. Unfortunately, the project was lost over time.",
+      "tools": ["Unity", "C#"],
       "tags": ["Mobile Development", "Unity", "Puzzle"]
     },
     {
       "id": 3,
       "year": "2020",
       "title": "Vir - The Board Game",
+      "type": "Game",
       "platforms": ["Web"],
-      "description": "A web-based multiplayer board game with local and online play. Developed for a client who wanted a digital version of their upcoming physical board game. The project was eventually taken down when the physical version didn’t launch.",
+      "description": "A web-based multiplayer board game with local and online play. Developed for a client who wanted a digital version of their upcoming physical board game. The project was eventually taken down when the physical version didn't launch.",
+      "tools": ["React", "Node.js", "WebSockets"],
       "tags": ["Web Development", "React", "Multiplayer"]
     },
     {
       "id": 4,
       "year": "2022",
       "title": "Local Music Bot",
+      "type": "Bot",
       "platforms": ["Discord"],
       "description": "A Discord bot built using discord.js to stream music from a local server to a voice channel. Created as a solution after popular music bots were banned, allowing my friends and me to continue enjoying music while gaming.",
+      "tools": ["JavaScript", "discord.js", "Node.js"],
       "tags": ["Discord Bot", "JavaScript", "Music Player"]
     },
     {
       "id": 5,
       "year": "2024",
       "title": "Bulk Clip Trimmer",
+      "type": "Tool",
+      "url": "/bulk-clip-trimmer",
       "platforms": ["Desktop"],
       "description": "A tool for quickly processing large numbers of video clips with minimal effort. Built to address the challenge of managing gaming clips, this project also served as a learning experience in using GPT-4o with Copilot for Flutter development.",
+      "tools": ["Flutter", "Dart", "FFmpeg"],
       "tags": ["Desktop App", "Flutter", "AI-Assisted Development", "Video Processing"]
     }
   ],

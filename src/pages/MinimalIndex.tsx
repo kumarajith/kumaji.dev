@@ -2,7 +2,8 @@ import config from '../data/config.json';
 
 const MinimalIndex = () => {
   const { name, title, description } = config.personalInfo;
-  const { projects, social } = config;
+  const { social } = config;
+  const projects = [...config.projects].sort((a, b) => Number(b.year) - Number(a.year));
 
   return (
     <div className="minimal-page">
@@ -31,14 +32,26 @@ const MinimalIndex = () => {
             {projects.map((project) => (
               <li key={project.id}>
                 <div className="minimal-project-header">
-                  <span className="minimal-project-title">{project.title}</span>
+                  <span className="minimal-project-title">
+                    {project.url ? (
+                      <a href={project.url} className="minimal-project-link">{project.title}</a>
+                    ) : project.title}
+                    <span className="minimal-project-type">{project.type}</span>
+                  </span>
                   <span className="minimal-project-year">{project.year}</span>
                 </div>
                 <p className="minimal-project-desc">{project.description}</p>
-                <div className="minimal-project-tags">
-                  {project.platforms.map((p) => (
-                    <span key={p} className="minimal-tag">{p}</span>
-                  ))}
+                <div className="minimal-project-meta">
+                  <div className="minimal-project-tags">
+                    {project.platforms.map((p) => (
+                      <span key={p} className="minimal-tag">{p}</span>
+                    ))}
+                  </div>
+                  <div className="minimal-project-tools">
+                    {project.tools.map((t) => (
+                      <span key={t}>{t}</span>
+                    ))}
+                  </div>
                 </div>
               </li>
             ))}
