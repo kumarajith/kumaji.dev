@@ -3,10 +3,13 @@ import App from './App.tsx'
 
 const siteVersion = import.meta.env.VITE_SITE_VERSION || 'original';
 
-if (siteVersion === 'minimal') {
-  import('./minimal.css');
-} else {
-  import('./index.css');
+async function init() {
+  if (siteVersion === 'minimal') {
+    await import('./minimal.css');
+  } else {
+    await import('./index.css');
+  }
+  createRoot(document.getElementById("root")!).render(<App />);
 }
 
-createRoot(document.getElementById("root")!).render(<App />);
+init();
