@@ -144,6 +144,19 @@ html, body {
   border-bottom-color: #90e890;
 }
 
+.minimal-external-icon {
+  width: 0.75em;
+  height: 0.75em;
+  margin-left: 0.25rem;
+  vertical-align: middle;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.minimal-project-link:hover .minimal-external-icon {
+  opacity: 1;
+}
+
 .minimal-project-year {
   color: #3d7a3d;
   font-size: 0.8rem;

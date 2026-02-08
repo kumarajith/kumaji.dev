@@ -51,7 +51,7 @@
       "year": "2024",
       "title": "Bulk Clip Trimmer",
       "type": "Tool",
-      "url": "/bulk-clip-trimmer",
+      "url": "https://apps.microsoft.com/detail/9npxbvrgrdh3",
       "platforms": ["Desktop"],
       "description": "A tool for quickly processing large numbers of video clips with minimal effort. Built to address the challenge of managing gaming clips, this project also served as a learning experience in using GPT-4o with Copilot for Flutter development.",
       "tools": ["Flutter", "Dart", "FFmpeg"],
