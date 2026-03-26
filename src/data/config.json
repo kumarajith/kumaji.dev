@@ -56,6 +56,17 @@
       "description": "A tool for quickly processing large numbers of video clips with minimal effort. Built to address the challenge of managing gaming clips, this project also served as a learning experience in using GPT-4o with Copilot for Flutter development.",
       "tools": ["Flutter", "Dart", "FFmpeg"],
       "tags": ["Desktop App", "Flutter", "AI-Assisted Development", "Video Processing"]
+    },
+    {
+      "id": 6,
+      "year": "2026",
+      "title": "Spotter",
+      "type": "Bot",
+      "url": "https://github.com/kumarajith/Spotter",
+      "platforms": ["Discord"],
+      "description": "A serverless Discord bot for tracking daily fitness activities and building workout streaks. Members log activities through a daily button panel, and the bot tracks consecutive-day streaks with milestone celebrations, 30-day heatmaps, and server leaderboards. Built fully serverless on AWS with Lambda, DynamoDB, and SQS — scales to zero with no idle costs.",
+      "tools": ["TypeScript", "NestJS", "AWS Lambda", "DynamoDB", "AWS CDK"],
+      "tags": ["Discord Bot", "Serverless", "AWS", "TypeScript", "Fitness"]
     }
   ],
   "social": [
