@@ -144,7 +144,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, delay }) => {
                   onClick={(e) => e.stopPropagation()}
                 >
                   <ExternalLink className="h-4 w-4" />
-                  View on GitHub
+                  {project.url.includes('github.com') ? 'View on GitHub' : project.url.includes('microsoft.com') ? 'View on Microsoft Store' : 'View Project'}
                 </a>
               )}
             </div>
