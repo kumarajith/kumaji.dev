@@ -59,6 +59,17 @@
     },
     {
       "id": 6,
+      "year": "2025",
+      "title": "Movie Night Bot",
+      "type": "Bot",
+      "url": "https://github.com/kumarajith/watchparty-bot",
+      "platforms": ["Discord"],
+      "description": "A Discord bot that gives your friends playback controls during a movie night screen share. Supports Netflix, Hotstar, Prime Video, and VLC via a Chrome extension and local companion app. Features slash commands, interactive buttons, a live \"Now Playing\" embed with a progress bar, and an action log so everyone knows who hit pause.",
+      "tools": ["TypeScript", "discord.js", "Node.js", "Chrome Extension", "WebSockets"],
+      "tags": ["Discord Bot", "TypeScript", "Chrome Extension", "Node.js"]
+    },
+    {
+      "id": 7,
       "year": "2026",
       "title": "Spotter",
       "type": "Bot",

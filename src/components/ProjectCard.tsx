@@ -11,6 +11,7 @@ interface Project {
   platforms: string[];
   description: string;
   tags: string[];
+  url?: string;
 }
 
 interface ProjectCardProps {
@@ -132,6 +133,20 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, delay }) => {
                   {project.description}
                 </p>
               </div>
+
+              {/* Link */}
+              {project.url && (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-neon-green hover:text-neon-green/80 transition-colors text-sm"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <ExternalLink className="h-4 w-4" />
+                  View on GitHub
+                </a>
+              )}
             </div>
           </DialogContent>
         </Dialog>
