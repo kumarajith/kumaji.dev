@@ -1,0 +1,191 @@
+@import '@fontsource-variable/hanken-grotesk';
+@import '@fontsource/jetbrains-mono/400.css';
+
+:root {
+  color-scheme: light dark;
+
+  --bg: light-dark(#f3f4f1, #121316);
+  --ink: light-dark(#16181d, #e6e7e3);
+  --muted: light-dark(#4c5159, #a0a3a8);
+  --body: light-dark(#30343a, #c2c4c7);
+  --blue: light-dark(#1d4ed8, #a9b9e0);
+  --orange: light-dark(#c2410c, #ddae94);
+  --work: light-dark(#e7ecfa, #171a21);
+  --side: light-dark(#f8ebe3, #1e1b1a);
+  --rule: light-dark(#d9b8a4, #3d3733);
+  --foot: light-dark(#16181d, #0b0c0e);
+  --foot-ink: light-dark(#f3f4f1, #e6e7e3);
+  --track: light-dark(#c9ccc6, #2c2f35);
+  --knob: light-dark(#ffffff, #e6e7e3);
+  --track-ink: light-dark(#30343a, #e6e7e3);
+
+  --sans: 'Hanken Grotesk Variable', Arial, sans-serif;
+  --mono: 'JetBrains Mono', Consolas, monospace;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+/* Layout */
+
+.wrap {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+.band {
+  padding-block: clamp(56px, 7vw, 88px);
+}
+
+.band-work {
+  background: var(--work);
+}
+
+.band-side {
+  background: var(--side);
+}
+
+/* Type */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding-block: 80px 96px;
+}
+
+.hero h1 {
+  max-width: 1080px;
+  font-size: clamp(38px, 5.6vw, 76px);
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.lede {
+  max-width: 680px;
+  color: var(--muted);
+  font-size: clamp(18px, 1.8vw, 22px);
+  line-height: 1.5;
+}
+
+.chapter {
+  font-size: clamp(44px, 5.6vw, 72px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.text-blue {
+  color: var(--blue);
+}
+
+.text-orange {
+  color: var(--orange);
+}
+
+.hero h1 span {
+  white-space: nowrap;
+}
+
+.mono {
+  color: var(--body);
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.copy {
+  color: var(--body);
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.subhead {
+  font-size: 24px;
+  letter-spacing: -0.01em;
+}
+
+.stack-8 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: 40px 48px;
+}
+
+/* Buttons, used on the app page */
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding-inline: 24px;
+  border-radius: 6px;
+  background: var(--ink);
+  color: var(--bg);
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+}

@@ -1,0 +1,146 @@
+---
+import Base from '../layouts/Base.astro';
+import { bulkClipTrimmerRepo, microsoftStoreUrl, newTab } from '../data/site';
+
+const features = [
+  {
+    title: 'Keep moving',
+    body: 'Trim a clip, send it to the queue and start on the next one while processing happens in the background.',
+  },
+  {
+    title: 'Batch processing',
+    body: 'Queue up as many clips as you like and let the app work through them.',
+  },
+  {
+    title: 'Separate outputs',
+    body: 'Set different output folders for video and audio exports, with your own quality settings.',
+  },
+  {
+    title: 'Audio extraction',
+    body: 'Pull the audio out of a video clip with a single click.',
+  },
+];
+
+const steps = [
+  {
+    title: 'Set up your output',
+    body: 'Choose where video and audio exports go, along with your default format and quality.',
+  },
+  {
+    title: 'Mark start and end',
+    body: 'Move through the clip and set the start and end points.',
+  },
+  {
+    title: 'Queue and repeat',
+    body: 'Add the clip to the queue and move straight on to the next one.',
+  },
+];
+
+const requirements = [
+  {
+    title: 'Minimum',
+    items: [
+      'Windows 10 64-bit',
+      '4GB RAM',
+      'Intel i3, AMD Ryzen 3 or equivalent',
+      '100MB of storage',
+      '1280x720 display',
+    ],
+  },
+  {
+    title: 'Recommended',
+    items: [
+      'Windows 10 or 11 64-bit',
+      '8GB RAM',
+      'Intel i5, AMD Ryzen 5 or better',
+      'SSD storage',
+      '1920x1080 display',
+    ],
+  },
+];
+---
+
+<Base
+  title="Bulk Clip Trimmer"
+  description="A Windows desktop app for getting through huge piles of video clips, with background processing and batch queues. Available on the Microsoft Store."
+>
+  <div class="wrap">
+    <section class="hero">
+      <h1>Bulk Clip <span class="text-orange">Trimmer</span></h1>
+      <p class="lede">
+        A Windows desktop app for getting through huge piles of gaming clips. I built it to deal with
+        my own.
+      </p>
+      <div class="actions">
+        <a class="button" href={microsoftStoreUrl} {...newTab}>Get it on the Microsoft Store</a>
+        <a href={bulkClipTrimmerRepo} {...newTab}>View the code</a>
+      </div>
+    </section>
+  </div>
+
+  <section class="band band-side" aria-labelledby="features">
+    <div class="wrap section">
+      <h2 id="features" class="chapter text-orange">What it does</h2>
+      <div class="card-grid">
+        {
+          features.map((feature) => (
+            <article class="stack-8">
+              <h3 class="subhead">{feature.title}</h3>
+              <p class="copy">{feature.body}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="how">
+    <div class="wrap section">
+      <h2 id="how" class="chapter">How it works</h2>
+      <ol class="card-grid steps">
+        {
+          steps.map((step, index) => (
+            <li class="stack-8">
+              <p class="mono">Step {index + 1}</p>
+              <h3 class="subhead">{step.title}</h3>
+              <p class="copy">{step.body}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="band band-work" aria-labelledby="requirements">
+    <div class="wrap section">
+      <h2 id="requirements" class="chapter text-blue">System requirements</h2>
+      <div class="card-grid">
+        {
+          requirements.map((group) => (
+            <div class="stack-8">
+              <h3 class="subhead">{group.title}</h3>
+              <ul class="copy requirement-list">
+                {group.items.map((item) => <li>{item}</li>)}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .steps,
+  .requirement-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+</style>

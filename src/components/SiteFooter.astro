@@ -1,0 +1,37 @@
+---
+import { email, newTab, resumeUrl } from '../data/site';
+---
+
+<footer>
+  <div class="wrap row">
+    <a class="email" href={`mailto:${email}`}>{email}</a>
+    <a class="resume" href={resumeUrl} {...newTab}>Download résumé</a>
+  </div>
+</footer>
+
+<style>
+  footer {
+    padding-block: 48px 56px;
+    background: var(--foot);
+    color: var(--foot-ink);
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px 32px;
+    font-weight: 600;
+  }
+
+  .email {
+    font-size: clamp(20px, 2.6vw, 32px);
+    letter-spacing: -0.015em;
+    overflow-wrap: anywhere;
+  }
+
+  .resume {
+    font-size: 17px;
+  }
+</style>

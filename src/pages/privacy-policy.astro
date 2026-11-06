@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Privacy Policy" description="Privacy policy for my apps.">
+  <div class="wrap">
+    <section class="hero">
+      <h1>Privacy Policy</h1>
+      <div class="policy copy">
+        <p>Thank you for using our app.</p>
+        <p>
+          We respect your privacy. This application does not collect, store, or share any personal
+          information. No user data is transmitted or saved locally or remotely.
+        </p>
+      </div>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .policy {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 680px;
+    font-size: 18px;
+  }
+</style>

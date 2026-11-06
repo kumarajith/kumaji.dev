@@ -1,0 +1,185 @@
+---
+import Base from '../layouts/Base.astro';
+import { featuredProjects, newTab, otherProjects, work } from '../data/site';
+---
+
+<Base
+  title="Ajith Kumar, backend engineer"
+  description="Backend engineer with over eight years of experience, building on Node.js, TypeScript and AWS. Side projects, résumé and links."
+>
+  <div class="wrap">
+    <section class="hero">
+      <h1>
+        I build backend systems <span class="text-blue">at work</span> and small, useful things for my
+        friends <span class="text-orange">after hours</span>.
+      </h1>
+      <p class="lede">Backend engineer with over eight years of experience.</p>
+    </section>
+  </div>
+
+  <section class="band band-work" aria-labelledby="work">
+    <div class="wrap work-layout">
+      <div class="work-intro">
+        <h2 id="work" class="chapter text-blue">At work</h2>
+        <p class="intro-copy">{work.intro}</p>
+        <p class="mono">{work.stack}</p>
+        <p class="cert"><a href={work.certification.href} {...newTab}>{work.certification.label}</a></p>
+      </div>
+      <div class="card-grid work-cards">
+        {
+          work.highlights.map((item) => (
+            <article class="stack-8">
+              <h3 class="subhead">{item.title}</h3>
+              <p class="copy">{item.body}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="band band-side" aria-labelledby="projects">
+    <div class="wrap projects">
+      <h2 id="projects" class="chapter text-orange">After hours</h2>
+      <div class="featured">
+        {
+          featuredProjects.map((project) => (
+            <article class="featured-project">
+              <h3><a href={project.href} {...newTab}>{project.title}</a></h3>
+              <p class="featured-copy">{project.body}</p>
+              <p class="mono">{project.meta}</p>
+            </article>
+          ))
+        }
+      </div>
+      <div>
+        {
+          otherProjects.map((project) => (
+            <article class="project-row">
+              <h3>{project.href ? <a href={project.href} {...newTab}>{project.title}</a> : project.title}</h3>
+              <p class="copy">
+                {project.body}
+                {project.storeUrl && (
+                  <>
+                    {' '}
+                    <a href={project.storeUrl} {...newTab}>Microsoft Store</a>.
+                  </>
+                )}
+              </p>
+              <p class="mono">{project.year}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="fun">
+    <div class="wrap fun">
+      <h2 id="fun" class="chapter">For fun</h2>
+      <div class="card-grid">
+        <div class="stack-8">
+          <h3 class="subhead">Rock climbing</h3>
+          <p class="copy">My newest hobby.</p>
+        </div>
+        <div class="stack-8">
+          <h3 class="subhead">Gaming</h3>
+          <p class="copy">I mostly play Destiny, Path of Exile and Dota.</p>
+        </div>
+        <div class="stack-8">
+          <h3 class="subhead">Movie nights</h3>
+          <p class="copy">Over screen share with friends, which is how the bot happened.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .work-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 72px;
+  }
+
+  .work-intro {
+    display: flex;
+    flex: 1 1 320px;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 0;
+  }
+
+  .intro-copy {
+    color: var(--body);
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .cert {
+    color: var(--body);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  .work-cards {
+    flex: 999 1 560px;
+    min-width: 0;
+  }
+
+  .projects {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .featured {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr));
+    gap: 40px 72px;
+  }
+
+  .featured-project {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .featured-project h3 {
+    font-size: clamp(28px, 3vw, 38px);
+    letter-spacing: -0.02em;
+  }
+
+  .featured-copy {
+    color: var(--body);
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .project-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 32px;
+    padding-block: 18px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .project-row h3 {
+    flex: 1 1 240px;
+    min-width: 0;
+    font-size: 20px;
+  }
+
+  .project-row .copy {
+    flex: 999 1 420px;
+    min-width: 0;
+  }
+
+  .fun {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+</style>

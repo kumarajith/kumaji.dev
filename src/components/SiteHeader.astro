@@ -1,0 +1,38 @@
+---
+import { navLinks, newTab } from '../data/site';
+import ThemeSwitch from './ThemeSwitch.astro';
+---
+
+<header class="site-header">
+  <a class="site-name" href="/">Ajith Kumar</a>
+  <nav aria-label="Links">
+    {navLinks.map((link) => <a href={link.href} {...newTab}>{link.label}</a>)}
+    <ThemeSwitch />
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 32px;
+    padding-block: 20px;
+  }
+
+  .site-name {
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 24px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+</style>
